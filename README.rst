@@ -2,7 +2,7 @@
 Docker Deployer
 ===============
 
-Docker Deployer is a [Fabric](http://www.fabfile.org/) framework for [Docker Compose](https://docs.docker.com/compose/)
+Docker Deployer is a Fabric_ framework for `Docker Compose`_
 applications deployment.
 
 Contributing
@@ -13,3 +13,6 @@ Create your feature branch (git checkout -b my-new-feature)
 Commit your changes (git commit -am 'Add some feature')
 Push to the branch (git push origin my-new-feature)
 Create new Pull Request
+
+.. _Fabric: http://www.fabfile.org/
+.. _Docker Compose: https://docs.docker.com/compose/
