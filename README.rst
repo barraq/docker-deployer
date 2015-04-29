@@ -5,6 +5,22 @@ Docker Deployer
 Docker Deployer is a Fabric_ framework for `Docker Compose`_
 applications deployment.
 
+While `Docker Compose`_ is a tool for defining and running complex applications with Docker,
+Docker Deployer provides a basic suite of tasks for deploying such applications in various environment
+such as CI servers, staging servers, production servers, etc.
+
+
+Installation
+============
+
+To use Docker Deployer you need Fabric_
+
+    pip install fabric
+    pip install docker-deployer
+
+You are done !
+
+
 Contributing
 ============
 

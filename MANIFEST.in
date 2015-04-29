@@ -1,0 +1,7 @@
+include versioneer.py
+include deployer/_version.py
+include deployer/__init__.py
+include deployer/configmanager.py
+include deployer/framework.py
+include deployer/fabric/*.py
+include deployer/config/env/*.cfg
