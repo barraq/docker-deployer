@@ -10,11 +10,17 @@ versioneer.parentdir_prefix = 'deployer-' # dirname like 'myproject-1.2.0'
 
 from setuptools import setup, find_packages
 
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except(IOError, ImportError):
+    long_description = open('README.md').read()
+
 setup(
     name="docker-deployer",
     version=versioneer.get_version(),
     description="A Fabric framework for Docker deployment based on Docker-Compose.",
-    long_description=open('README.rst').read(),
+    long_description=long_description,
     author="Remi Barraquand",
     author_email="dev@remibarraquand.com",
     url="https://github.com/barraq/docker-deployer",
