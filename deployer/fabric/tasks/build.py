@@ -55,7 +55,7 @@ def build(branch='master'):
     """Build service image and shared data for a given `branch` (default: master)"""
     require('environment', provided_by=[stage])
 
-    # execute(checkout_local_repo, branch=branch)
+    execute(checkout_local_repo, branch=branch)
     execute(process_shared, version=branch)
     with lcd(os.path.join(env['project']['project_repo_path'],
                           os.path.dirname(env['application']['application_dockerfile']))):
