@@ -20,7 +20,6 @@ def push(branch='master'):
     """Push docker service image to docker registry"""
     require('environment', provided_by=[stage])
 
-    # execute(checkout_local_repo, branch=branch)
     local('docker push {registry}/{path}:{version}'.format(
         registry=env['docker']['docker_registry'],
         path=os.path.join('%(application_docker_repository)s' % env['application'],
@@ -33,7 +32,6 @@ def pull(branch='master'):
     """Pull docker service image from docker registry on remote"""
     require('environment', provided_by=[stage])
 
-    # execute(checkout_local_repo, branch=branch)
     run('docker pull {registry}/{path}:{version}'.format(
         registry=env['docker']['docker_registry'],
         path=os.path.join('%(application_docker_repository)s' % env['application'],
