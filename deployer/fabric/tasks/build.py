@@ -1,6 +1,7 @@
 import os
 
 from fabric.api import require, execute, lcd, task, local, env
+from fabric.utils import puts
 
 from core import stage
 from git import checkout_local_repo
@@ -57,6 +58,13 @@ def build(branch='master'):
 
     execute(checkout_local_repo, branch=branch)
     execute(process_shared, version=branch)
+
+    # if application does not require building an image we are done
+    if env['application']['application_dockerfile'] in ['None', 'False']:
+        puts('No image to build.')
+        return
+
+    # otherwise we build the image
     with lcd(os.path.join(env['project']['project_repo_path'],
                           os.path.dirname(env['application']['application_dockerfile']))):
         local('docker build -t {registry}/{path}:{version} .'.format(
